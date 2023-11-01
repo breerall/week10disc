@@ -15,8 +15,7 @@
 
 	<script type="text/javascript">
 
-	window.onload = function() {
-    displayInformation();}
+	// window.onload = displayInformation();
 
 	function displayInformation () {
 		// Your code goes here. 
@@ -28,8 +27,8 @@
 
 		// 2. Update the three span elements using ONLY JavaScript
 		document.getElementById("URL").innerText = window.location.href;
-    	document.getElementById("items").innerText = document.querySelectorAll("ol li").length + document.querySelectorAll("ul li").length;
-    	document.getElementById("sky-blue-bhavya").innerText = new Date().toLocaleString();
+    	document.getElementById("items").innerText = document.querySelectorAll("li").length;
+    	document.getElementById("sky-blue-bhavya").innerText = Date();
 
 		// 3. Change the background color and margin for the entire page.
 		document.querySelector("body").style.backgroundColor= 'skyblue';
@@ -40,15 +39,14 @@
     // Each occurence should be on a separate line.  Don't use 
     // paragraphs.
 	function copyFunction() {
-    const cheerDiv = document.getElementById("cheer");
-    cheerDiv.innerText += "\nGo Blue";
+    document.getElementById("cheer").innerHTML += 'Go Blue<br>';
 	}
 
 		
 </script>
 
 </head>
-<body>
+<body onload = displayInformation()>
 	<h1>Your name goes here</h1>
 
 	<ol>
