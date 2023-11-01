@@ -14,40 +14,35 @@
 	</style>
 
 	<script type="text/javascript">
+
+	window.onload = function() {
+    displayInformation();}
+
 	function displayInformation () {
 		// Your code goes here. 
 		// Do not change any other code in this file
 		// All of the steps below must be achieved using JavaScript!
 
-		
 		// 1. Change the h1 element to your name.
-		document.querySelector("h1").innerHTML = "Piano";
-
+		document.querySelector("h1").innerText = "Bhavya and Piano"; // Replace 'Your Name' with your actual name.
 
 		// 2. Update the three span elements using ONLY JavaScript
-		let currentUrl = window.location.href;
-		document.querySelector("URL").innerHTML = currentUrl;
-
-		let numList = document.querySelectorAll("li");
-		document.querySelector("items").innerHTML = numList;
-
-		const date = new Date()
-		let day = date.getDate();
-		let month = date.getMonth();
-		let year = date.getFullYear();
-		let currentDate = "${day}-${month}-${year}";
-		document.querySelector("time").innerHTML = currentDate;
-
+		document.getElementById("URL").innerText = window.location.href;
+    	document.getElementById("items").innerText = document.querySelectorAll("ol li").length + document.querySelectorAll("ul li").length;
+    	document.getElementById("sky-blue-bhavya").innerText = new Date().toLocaleString();
 
 		// 3. Change the background color and margin for the entire page.
-	
-
-
+		document.querySelector("body").style.backgroundColor= 'skyblue';
+		document.querySelector("body").style.margin='20px';
     }
 
     // 4. If someone uses the keyboard shortcut to copy the words "University of Michigan" then add the words "Go Blue" to the final div.  
     // Each occurence should be on a separate line.  Don't use 
-    // paragraphs. 
+    // paragraphs.
+	function copyFunction() {
+    const cheerDiv = document.getElementById("cheer");
+    cheerDiv.innerText += "\nGo Blue";
+	}
 
 		
 </script>
@@ -66,8 +61,7 @@
 	<p>
 		The URL of this page is: <span id = "URL"></span><br/>
 		The number of list items for this page: <span id = "items"></span><br/>
-		The current date/time is: <span id = "time"></span><br/>
-		<span>sky-blue</span>
+		The current date/time is: <span id = "sky-blue-bhavya"></span><br/>
 	</p>
 	<ul>
 		<li>Kent State</li>
@@ -77,7 +71,6 @@
 		<li oncopy="copyFunction()">University of Michigan</li>
 	</ul>
 	<div id="cheer">
-
 	</div>
 
 </body>
